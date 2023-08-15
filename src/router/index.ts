@@ -1,27 +1,53 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
-import LoginView from '../views/auth/LoginView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      component: ()=> import("../layouts/Layout.vue"),
+      redirect:"/dashboard",
+      children: [
+        {
+          path: "dashboard",
+          component: ()=>import("../views/dashboard/DashboardView.vue")
+        },
+        {
+          path: "categories",
+          component: ()=>import("../views/categories/CategoriesView.vue")
+        },
+        {
+          path: "companies",
+          component: ()=>import("../views/companies/CompaniesView.vue")
+        },
+        {
+          path: "orders",
+          component: ()=>import("../views/orders/OrdersView.vue")
+        },
+        {
+          path: "products",
+          component: ()=>import("../views/products/ProductsView.vue")
+        },
+        {
+          path: "users",
+          component: ()=>import("../views/users/UsersView.vue")
+        },
+        {
+          path: "settings",
+          component: ()=>import("../views/settings/SettingsView.vue")
+        }
+      ]
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    },
-    {
-      path: '/auth/login',
-      name: 'login',
-      component: LoginView
+      path: "/auth",
+      component: ()=>import("../layouts/AuthLayout.vue"),
+      redirect: "/auth/login",
+      children: [
+        {
+          path: "login",
+          component: ()=>import("../views/auth/LoginView.vue")
+        }
+      ]
     }
   ]
 })
