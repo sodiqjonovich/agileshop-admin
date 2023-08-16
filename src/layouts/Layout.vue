@@ -4,9 +4,11 @@ import Sidebar from "../components/common/Sidebar.vue";
 import Footer from "../components/common/Footer.vue";
 import ThemeSetter from "../components/common/ThemeSetter.vue";
 import { RouterView } from "vue-router";
+import FlowBiteSetup from "../FlowBiteSetup.vue";
 </script>
 
 <template>
+  <FlowBiteSetup></FlowBiteSetup>
   <ThemeSetter></ThemeSetter>
   <Header></Header>
   <Sidebar></Sidebar>
