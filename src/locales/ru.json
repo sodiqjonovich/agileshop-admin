@@ -1,5 +1,6 @@
 {
-    "dashboard": "Главная панель",
+    "home": "Главная",
+    "dashboard": "Панель",
     "categories": "Категории",
     "companies": "Компании",
     "products": "Продукты",
