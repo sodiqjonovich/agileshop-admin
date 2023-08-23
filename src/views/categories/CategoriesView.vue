@@ -6,7 +6,7 @@ import CategorySkeletonComponent from "@/components/categories/CategorySkeletonC
 import CategoryViewComponent from "@/components/categories/CategoryViewComponent.vue";
 import axios from '@/plugins/axios'
 import { useI18n } from 'vue-i18n';
-
+import { getToken } from '@/helpers/TokenHelper';
 export default defineComponent({
   components:{
     CategoryViewComponent, CategorySkeletonComponent,
@@ -15,7 +15,12 @@ export default defineComponent({
   methods:{
     async getDataAsync(){
       this.isLoaded = false;
-      var response = await axios.get<CategoryViewModel[]>("/api/categories");
+      const token = getToken();
+      var response = await axios.get<CategoryViewModel[]>("/api/categories", {
+        headers:{
+          "Authorization": "Bearer "+token
+        }
+      });
       this.isLoaded=true;
       this.categoriesList = response.data;
     }

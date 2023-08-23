@@ -1,13 +1,17 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000"//process.env.VUE_APP_BASE_URL // Set your base URL here
+  baseURL: "http://localhost:5199"
 });
 
 // Interceptors for handling common scenarios
 instance.interceptors.response.use(
-  response => response,
+  respone=>respone,
   error => {
+    if(error.response.status == 400){
+      return error.response;
+    }
+
     if (error.response.status === 401) {
       // Redirect to unauthorized page
       // You can use Vue Router to navigate
@@ -20,7 +24,7 @@ instance.interceptors.response.use(
     else if (error.response.status == 500){
       console.log("500 error handled");
     }
-    return Promise.reject(error);
+    else return Promise.reject(error);
   }
 );
 
