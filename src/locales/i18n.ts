@@ -7,7 +7,7 @@ export const defaultlocale: string = "uz";
 
 const i18n: any = createI18n({
     legacy: false,
-    locale: !!localStorage.getItem("language") ? localStorage.getItem("language") 
+    locale: !!localStorage.getItem("language") ? localStorage.getItem("language")! 
         : defaultlocale,
     fallbackLocale: "uz",
     messages: {

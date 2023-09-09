@@ -1,5 +1,5 @@
 export class CategoryViewModel{
-    id: Number = 0;
+    id: number = 0;
     name: string = "";
     imagePath: string = "";
     description: string = "";

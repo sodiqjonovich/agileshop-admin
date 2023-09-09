@@ -1,8 +1,4 @@
 <script setup lang="ts">
-  import IconEnglish from "../icons/languages/IconEnglish.vue";
-  import IconUzbek from "../icons/languages/IconUzbek.vue";
-  import IconRussian from "../icons/languages/IconRussian.vue";
-  import { ref } from 'vue';
   import { useI18n } from "vue-i18n";
   const t = useI18n();
   
@@ -10,7 +6,6 @@
     t.locale.value = language;
     localStorage.setItem("language", language);
   }
-
 </script>
 <template>
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
@@ -18,21 +13,21 @@
 
       <!--begin::Uzbek-->
       <button v-show="t.locale.value == 'uz'" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-        <IconUzbek></IconUzbek>
+        <icon name="flag-uz" class="rounded-lg mx-2 w-4 h-4"></icon>
         {{ $t("uz") }}
       </button>
       <!--end::Uzbek-->
 
       <!--begin::Russian-->
       <button v-show="t.locale.value == 'ru'" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-        <IconRussian></IconRussian>
+        <icon name="flag-ru" class="rounded-lg mx-2 w-4 h-4"></icon>
         {{ $t("ru") }}
       </button>
       <!--end::Russian-->
 
       <!--begin::English-->
       <button v-show="t.locale.value == 'en'" type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-        <IconEnglish></IconEnglish>
+        <icon name="flag-en" class="rounded-lg mx-2 w-4 h-4"></icon>
         {{ $t("en") }}
         
       </button>
@@ -45,7 +40,7 @@
           <li>
             <button @click="changeLanguage('uz')" class="w-40 items-start block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
               <div class="flex flex-wrap mx-2 items-center">
-                <IconUzbek></IconUzbek>
+                <icon name="flag-uz" class="rounded-lg mx-2 w-4 h-4"></icon>
                 {{ $t("uz") }}
               </div>
             </button>
@@ -53,7 +48,7 @@
           <li>
             <button @click="changeLanguage('ru')" class="w-40 items-start block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
               <div class="flex flex-wrap mx-2 items-center">
-                <IconRussian></IconRussian>
+                <icon name="flag-ru" class="rounded-lg mx-2 w-4 h-4"></icon>
                 {{ $t("ru") }}
               </div>
             </button>
@@ -61,7 +56,7 @@
           <li>
             <button @click="changeLanguage('en')" class="w-40 items-start block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">
               <div class="flex flex-wrap mx-2 items-center">
-                <IconEnglish></IconEnglish>
+                <icon name="flag-en" class="rounded-lg mx-2 w-4 h-4"></icon>
                 {{ $t("en") }}
               </div>
             </button>

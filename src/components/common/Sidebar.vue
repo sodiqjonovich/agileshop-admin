@@ -1,14 +1,6 @@
 <script setup lang="ts">
-   import IconDashboard from '../icons/IconDashboard.vue';
-   import IconCategories from "../icons/IconCategories.vue"
-   import IconCompanies from "../icons/IconCompanies.vue";
-   import IconProducts from "../icons/IconProducts.vue";
-   import IconUsers from "../icons/IconUsers.vue";
-   import IconOrders from "../icons/IconOrders.vue";
-   import IconSettings from "../icons/IconSettings.vue";
    import { useI18n } from 'vue-i18n';
    const { t } = useI18n();
-
 </script>
 <template>
 <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
@@ -17,7 +9,7 @@
          <li>
             <RouterLink to="/dashboard">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconDashboard></IconDashboard>
+                  <icon name="dashboard" class="text-gray-900 dark:text-white w-6 h-6"></icon>
                   <span class="ml-3">{{ $t("dashboard") }}</span>
                </div>
             </RouterLink>
@@ -25,7 +17,7 @@
          <li>
             <RouterLink to="/categories">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconCategories></IconCategories>
+                  <icon name="categories" class="text-gray-900 dark:text-white w-6 h-6"></icon>
                   <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("categories") }}</span>
                </div>
             </RouterLink>
@@ -33,7 +25,7 @@
          <li>
             <RouterLink to="/companies">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconCompanies></IconCompanies>
+                  <icon name="companies" class="text-gray-900 dark:text-white w-6 h-6"></icon>
                   <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("companies") }}</span>
                </div>
             </RouterLink>
@@ -41,7 +33,7 @@
          <li>
             <RouterLink to="/products">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconProducts></IconProducts>               
+                  <icon name="products" class="text-gray-900 dark:text-white w-6 h-6"></icon>              
                   <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("products") }}</span>
                </div>
             </RouterLink>
@@ -49,7 +41,7 @@
          <li>
             <RouterLink to="/users">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconUsers></IconUsers>
+                  <icon name="users" class="text-gray-900 dark:text-white w-6 h-6"></icon>
                   <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("users") }}</span>
                </div>
             </RouterLink>
@@ -57,7 +49,7 @@
          <li>
             <RouterLink to="/orders">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconOrders></IconOrders>
+                  <icon name="orders" class="text-gray-900 dark:text-white w-6 h-6"></icon>
                   <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("orders") }}</span>
                </div>
             </RouterLink>
@@ -65,7 +57,7 @@
          <li>
             <RouterLink to="/settings">
                <div class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                  <IconSettings></IconSettings>
+                  <icon name="settings" class="text-gray-900 dark:text-white w-6 h-6"></icon>
                   <span class="flex-1 ml-3 whitespace-nowrap">{{ $t("settings") }}</span>
                </div>
             </RouterLink>

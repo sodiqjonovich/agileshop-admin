@@ -9,9 +9,11 @@ import axios from './plugins/axios'
 
 import './index.css'
 import i18n from './locales/i18n'
-
+import Icon from "./assets/icons/Icon.vue"
 
 const app = createApp(App)
+
+app.component('icon', Icon);
 
 app.use(createPinia())
 app.use(router)
